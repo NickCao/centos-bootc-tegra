@@ -4,7 +4,7 @@ ARG KVER=6.12.0-150.el10
 FROM ${BASE}
 ARG KVER
 RUN dnf config-manager --set-enabled crb
-RUN dnf install -y rpmdevtools
+RUN dnf install -y rpmdevtools createrepo_c
 RUN dnf download --source kernel-${KVER}
 RUN rpm --install       ./kernel-${KVER}.src.rpm
 RUN dnf builddep -y     ./kernel-${KVER}.src.rpm
