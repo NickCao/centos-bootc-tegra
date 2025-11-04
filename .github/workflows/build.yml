@@ -19,7 +19,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: "{{defaultContext}}:stream10"
-          tags: "ghcr.io/${{ github.repository }}:stream10"
+          tags: "ghcr.io/nickcao/centos-bootc-tegra:stream10"
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
