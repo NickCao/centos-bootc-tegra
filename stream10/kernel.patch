@@ -1,4 +1,4 @@
-From 8f7cf887da8ddde498874eeed9e7a089d01ff5d9 Mon Sep 17 00:00:00 2001
+From b4a5ede102f1898dcf1eeefa804f7359c925827b Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Mon, 27 May 2024 10:08:04 +0000
 Subject: [PATCH 01/21] NVIDIA: SAUCE: phy: tegra: xusb: Add Tegra264 support
@@ -108,10 +108,10 @@ index d2b5f9565132..b3302e9c7896 100644
  
  #endif /* __PHY_TEGRA_XUSB_H */
 -- 
-2.51.0
+2.51.2
 
 
-From 0896bc29ed7d29362611fc9857c0c3d32dfe8675 Mon Sep 17 00:00:00 2001
+From 0159acfa680aee43f37f84f26f7465f26de694bf Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Mon, 27 May 2024 10:48:46 +0000
 Subject: [PATCH 02/21] NVIDIA: SAUCE: usb: host: xhci-tegra: Add Tegra264 XHCI
@@ -175,10 +175,10 @@ index 0c7af44d4dae..718e2ae6cd21 100644
  };
  MODULE_DEVICE_TABLE(of, tegra_xusb_of_match);
 -- 
-2.51.0
+2.51.2
 
 
-From 37867132b22391a5481a221fbf7415679ef17fc5 Mon Sep 17 00:00:00 2001
+From 861aaa5f0b9af1df8e692b9acc367293ec285213 Mon Sep 17 00:00:00 2001
 From: Prathamesh Shete <pshete@nvidia.com>
 Date: Wed, 19 Jun 2024 09:58:54 +0000
 Subject: [PATCH 03/21] NVIDIA: SAUCE: gpio: t264: add GPIO support for T264
@@ -395,10 +395,10 @@ index 000000000000..c5749e489e03
 +
 +#endif
 -- 
-2.51.0
+2.51.2
 
 
-From c0f4b61ffecf2f2b2cd27970bd31687012cbf892 Mon Sep 17 00:00:00 2001
+From 82c4e9b13a28b6a908468c7395d9e5b6ae063e4c Mon Sep 17 00:00:00 2001
 From: Prathamesh Shete <pshete@nvidia.com>
 Date: Wed, 19 Jun 2024 10:46:38 +0000
 Subject: [PATCH 04/21] NVIDIA: SAUCE: pinctrl: t264: Add pinctrl support for
@@ -2692,10 +2692,10 @@ index 000000000000..8b953b8bf1e6
 +}
 +arch_initcall(tegra264_pinctrl_init);
 -- 
-2.51.0
+2.51.2
 
 
-From a648188a1869c4545382d5498eb9e3acfa946a11 Mon Sep 17 00:00:00 2001
+From 5a31fd4cc8c62fb6e8596b259777e62c0168317f Mon Sep 17 00:00:00 2001
 From: Laxman Dewangan <ldewangan@nvidia.com>
 Date: Sat, 24 Aug 2024 10:27:30 +0000
 Subject: [PATCH 05/21] NVIDIA: SAUCE: pinctrl: Remove duplication of
@@ -2747,10 +2747,10 @@ index 9392c2c43cc8..b838a8561c5e 100644
  	help
  	  Enable support for the NVIDIA Tegra264 SoC.
 -- 
-2.51.0
+2.51.2
 
 
-From 8ec52d08332d507cb5fddfb4b5c7a7468cf8ebf1 Mon Sep 17 00:00:00 2001
+From 3005d96d78166ae0ae8e7b2b1e08548f7b9e5c27 Mon Sep 17 00:00:00 2001
 From: Gautham Srinivasan <gauthams@nvidia.com>
 Date: Wed, 17 Jul 2024 10:22:32 +0000
 Subject: [PATCH 06/21] NVIDIA: SAUCE: gpio-tegra: enable GTE for T264
@@ -2779,10 +2779,10 @@ index 76eaf4f44a29..fe63bc9a5be2 100644
  
  static const struct of_device_id tegra186_gpio_of_match[] = {
 -- 
-2.51.0
+2.51.2
 
 
-From d142a0c31b2ea56f74ef201c2d07cdbce543f62c Mon Sep 17 00:00:00 2001
+From 3f6eb13e4b80c16195ad7d2e64383cf65d6319a6 Mon Sep 17 00:00:00 2001
 From: Nick Cao <nickcao@nichi.co>
 Date: Mon, 27 Oct 2025 12:34:16 -0400
 Subject: [PATCH 07/21] fixup! soc/tegra: pmc: Add Tegra264 support
@@ -2814,10 +2814,10 @@ index da7309c1acfa..3eafe3fc7457 100644
  		/* "scratch" is an optional aperture */
  		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
 -- 
-2.51.0
+2.51.2
 
 
-From d6538159ad904c615e2ecc71aeab9b6c8ba74023 Mon Sep 17 00:00:00 2001
+From 726b98aa2e152cde6f8acd77be3d0a81bd071c58 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Thu, 20 Jun 2024 06:11:39 +0000
 Subject: [PATCH 08/21] NVIDIA: SAUCE: phy: xusb: skip USB2 PAD tracking and
@@ -2908,10 +2908,10 @@ index b3302e9c7896..b6266b3ee1c9 100644
  
  struct tegra_xusb_padctl {
 -- 
-2.51.0
+2.51.2
 
 
-From dfb7a1f94ef8303edee00a5b698ac5c9e9d928a6 Mon Sep 17 00:00:00 2001
+From f49d3febc6c410641d63d0637ca7642616608200 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Tue, 18 Jun 2024 06:59:42 +0000
 Subject: [PATCH 09/21] NVIDIA: SAUCE: usb: xhci: skip mbox configuration
@@ -2962,10 +2962,10 @@ index 718e2ae6cd21..2839f22c7f01 100644
  	.has_bar2 = true,
  };
 -- 
-2.51.0
+2.51.2
 
 
-From 002a2e585738b3412e32f42bc62e2ff8bb799e8d Mon Sep 17 00:00:00 2001
+From ac1d9671665873415015b1d62c52d0e752be5657 Mon Sep 17 00:00:00 2001
 From: Wayne Chang <waynec@nvidia.com>
 Date: Tue, 13 Aug 2024 02:40:11 +0000
 Subject: [PATCH 10/21] NVIDIA: SAUCE: phy: tegra: Increase timeout for
@@ -3006,10 +3006,10 @@ index 1a2fc809ebd5..a24e3db8d5b5 100644
  			/* The failure with polling on trk complete will not
  			 * cause the failure of powering on the bias pad.
 -- 
-2.51.0
+2.51.2
 
 
-From b67c9fab9b83e0ce08e2fab52ca90fc96a20caa4 Mon Sep 17 00:00:00 2001
+From 17be13c2a3edc152c4e7755e5faf17414c2a4d07 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 4 Nov 2022 15:47:29 +0530
 Subject: [PATCH 11/21] NVIDIA: SAUCE: dmaengine: tegra: Get slave channel
@@ -3148,10 +3148,10 @@ index 4d6fe0efa76e..b1e02848d968 100644
  {
  	const struct tegra_dma_chip_data *cdata = NULL;
 -- 
-2.51.0
+2.51.2
 
 
-From c19e3d47b2a474e471028b7eb8f9641743278568 Mon Sep 17 00:00:00 2001
+From 988525774c287212d4d325e678ee0af47bb74c71 Mon Sep 17 00:00:00 2001
 From: Manish Bhardwaj <mbhardwaj@nvidia.com>
 Date: Sat, 15 Jun 2024 19:58:46 +0000
 Subject: [PATCH 12/21] NVIDIA: SAUCE: gpcdma: fix crash in gpcdma driver
@@ -3194,10 +3194,10 @@ index b1e02848d968..b63dd0322050 100644
  	chan = dma_get_slave_channel(&tdma->channels[chan_id].vc.chan);
  	if (!chan)
 -- 
-2.51.0
+2.51.2
 
 
-From dc1813814725a8a565a5548ec58cd7d2cf9596f3 Mon Sep 17 00:00:00 2001
+From 3a1f93e979cb489366c5c3c23281b3e4bb5a8d61 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 21:11:58 +0530
 Subject: [PATCH 13/21] NVIDIA: SAUCE: dmaengine: tegra: Use struct for
@@ -3864,10 +3864,10 @@ index b63dd0322050..9b5bca55b9dc 100644
  		tdc->tdma = tdma;
  		tdc->id = i;
 -- 
-2.51.0
+2.51.2
 
 
-From 7e7910a2f6a0547e689b7a90d56ba94163ef11ed Mon Sep 17 00:00:00 2001
+From 5164a7c2ae7f8a85615e2b307b44b53b996d2f58 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 21:59:37 +0530
 Subject: [PATCH 14/21] NVIDIA: SAUCE: dmaengine: tegra: Support more than 40
@@ -4121,10 +4121,10 @@ index 9b5bca55b9dc..e4634966a633 100644
  	.max_dma_count = SZ_1G,
  	.hw_support_pause = true,
 -- 
-2.51.0
+2.51.2
 
 
-From 3f98f63ace5e87bcca63d3772234693b8f40ea6f Mon Sep 17 00:00:00 2001
+From cd4c252430c998dad31df184849791a7b891d8d6 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 22:18:39 +0530
 Subject: [PATCH 15/21] NVIDIA: SAUCE: dmaengine: tegra: Add Tegra264 support
@@ -4199,10 +4199,10 @@ index e4634966a633..2edce19f8e59 100644
  	},
  };
 -- 
-2.51.0
+2.51.2
 
 
-From 9e142590506b998fee3ede8d280700a96c355e82 Mon Sep 17 00:00:00 2001
+From 950b1996899044736114ec66aac2c354317ba59b Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Wed, 16 Aug 2023 09:44:52 +0530
 Subject: [PATCH 16/21] NVIDIA: SAUCE: dmaengine: tegra: Remove reset control
@@ -4277,10 +4277,10 @@ index 2edce19f8e59..f98e19b3fe36 100644
  		struct tegra_dma_channel *tdc = &tdma->channels[i];
  
 -- 
-2.51.0
+2.51.2
 
 
-From 7a7f62d17279fdb71354885394f67758df1447ee Mon Sep 17 00:00:00 2001
+From ebabb889d54c532695ca57f3425984070acfc336 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Tue, 4 Apr 2023 12:04:31 +0000
 Subject: [PATCH 17/21] NVIDIA: SAUCE: spi: add "tegra-spidev" compatible
@@ -4318,10 +4318,10 @@ index 5300c942a2a4..8fef8c6ffeff 100644
  };
  MODULE_DEVICE_TABLE(of, spidev_dt_ids);
 -- 
-2.51.0
+2.51.2
 
 
-From 43442392ea94d3c97001c010b0005aa17dc6c590 Mon Sep 17 00:00:00 2001
+From 37245596d8199359777cea5737a42798bd6cf255 Mon Sep 17 00:00:00 2001
 From: Gautham Srinivasan <gauthams@nvidia.com>
 Date: Wed, 24 May 2023 17:22:20 +0000
 Subject: [PATCH 18/21] NVIDIA: SAUCE: spi: add "tegra-spidev" name string.
@@ -4358,10 +4358,10 @@ index 8fef8c6ffeff..fe5033c24a68 100644
  };
  MODULE_DEVICE_TABLE(spi, spidev_spi_ids);
 -- 
-2.51.0
+2.51.2
 
 
-From d82fcfcb1011169eb4702649d3b3ed4938f935c0 Mon Sep 17 00:00:00 2001
+From be710ad9ea162fdf734aa8ee74396a7c09dc86bc Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Tue, 12 Dec 2023 11:00:52 +0000
 Subject: [PATCH 19/21] NVIDIA: SAUCE: drivers: spi: fix warnings in spi
@@ -4403,10 +4403,10 @@ index 795a8482c2c7..3ac19d4bb216 100644
  	    (hold->value && hold->unit != SPI_DELAY_UNIT_SCK) ||
  	    (inactive->value && inactive->unit != SPI_DELAY_UNIT_SCK)) {
 -- 
-2.51.0
+2.51.2
 
 
-From 75c9917855d8817e83e64ff5e30fd4fbf9b2c3f1 Mon Sep 17 00:00:00 2001
+From 651c3dadc21d0dc713cde80eb6ec6121ea788731 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Wed, 13 Dec 2023 09:13:37 +0000
 Subject: [PATCH 20/21] NVIDIA: SAUCE: drivers: spi: fix warnings in spi core.
@@ -4433,7 +4433,7 @@ Signed-off-by: Noah Wager <noah.wager@canonical.com>
  1 file changed, 2 insertions(+)
 
 diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
-index 63681d837e6c..406197fb8bf0 100644
+index eb4076c0d040..c8ff9f5f9f41 100644
 --- a/drivers/spi/spi.c
 +++ b/drivers/spi/spi.c
 @@ -2531,6 +2531,8 @@ static void of_register_spi_devices(struct spi_controller *ctlr)
@@ -4446,10 +4446,10 @@ index 63681d837e6c..406197fb8bf0 100644
  		if (IS_ERR(spi)) {
  			dev_warn(&ctlr->dev,
 -- 
-2.51.0
+2.51.2
 
 
-From 06938792afe28a3eb6c387b33053d9d5032874f5 Mon Sep 17 00:00:00 2001
+From 71796ec913e4d048f9ca80cc6ad429d615e2a2d4 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Mon, 14 Aug 2023 20:33:31 +0000
 Subject: [PATCH 21/21] NVIDIA: SAUCE: spi: spi-tegra114: retain the spi mode
@@ -4529,5 +4529,5 @@ index 3ac19d4bb216..5c4f2e832023 100644
  	tegra_spi_writel(tspi, tspi->def_command1_reg, SPI_COMMAND1);
  	tspi->spi_cs_timing1 = tegra_spi_readl(tspi, SPI_CS_TIMING1);
 -- 
-2.51.0
+2.51.2
 
