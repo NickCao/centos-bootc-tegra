@@ -1,5 +1,5 @@
 ARG BASE=quay.io/centos-bootc/centos-bootc:stream10
-ARG KVER=6.12.0-167.el10
+ARG KVER=6.12.0-164.el10
 
 FROM ${BASE} AS build
 ARG KVER
@@ -33,7 +33,7 @@ RUN createrepo /root/rpmbuild/RPMS
 FROM ${BASE} AS base
 ARG KVER
 RUN --mount=from=build,source=/root/rpmbuild/RPMS,target=/kernel \
-  dnf reinstall -y \
+  dnf install -y \
   /kernel/aarch64/kernel-${KVER}.aarch64.rpm \
   /kernel/aarch64/kernel-core-${KVER}.aarch64.rpm \
   /kernel/aarch64/kernel-modules-${KVER}.aarch64.rpm \
