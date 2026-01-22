@@ -7,7 +7,7 @@ RUN dnf config-manager --set-enabled crb
 RUN dnf install -y rpmdevtools createrepo_c
 RUN dnf download --source kernel-${KVER}
 RUN rpm --install       ./kernel-${KVER}.src.rpm
-RUN dnf builddep -y     ./kernel-${KVER}.src.rpm
+RUN dnf builddep -y     ./kernel-${KVER}.src.rpm --nobest
 
 RUN sed -i 's|# CONFIG_PM_DEVFREQ is not set|CONFIG_PM_DEVFREQ=y|' \
   /root/rpmbuild/SOURCES/kernel-aarch64-rhel.config
