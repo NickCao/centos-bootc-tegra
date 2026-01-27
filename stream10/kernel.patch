@@ -1,7 +1,7 @@
-From b4a5ede102f1898dcf1eeefa804f7359c925827b Mon Sep 17 00:00:00 2001
+From cdf3de80fe762c1a35a1f7090baf7be9a0b50fd6 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Mon, 27 May 2024 10:08:04 +0000
-Subject: [PATCH 01/21] NVIDIA: SAUCE: phy: tegra: xusb: Add Tegra264 support
+Subject: [PATCH 01/27] NVIDIA: SAUCE: phy: tegra: xusb: Add Tegra264 support
 
 Add support for the XUSB pad controller for Tegra264. Most of
 the Tegra264 XUSB PADCTL registers definition and programming sequence
@@ -108,13 +108,13 @@ index d2b5f9565132..b3302e9c7896 100644
  
  #endif /* __PHY_TEGRA_XUSB_H */
 -- 
-2.51.2
+2.52.0
 
 
-From 0159acfa680aee43f37f84f26f7465f26de694bf Mon Sep 17 00:00:00 2001
+From e18952469d8980127ab8555d88698cadd47185f8 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Mon, 27 May 2024 10:48:46 +0000
-Subject: [PATCH 02/21] NVIDIA: SAUCE: usb: host: xhci-tegra: Add Tegra264 XHCI
+Subject: [PATCH 02/27] NVIDIA: SAUCE: usb: host: xhci-tegra: Add Tegra264 XHCI
  support
 
 This commit adds Tegra264 XUSB host mode controller support.
@@ -175,13 +175,13 @@ index 0c7af44d4dae..718e2ae6cd21 100644
  };
  MODULE_DEVICE_TABLE(of, tegra_xusb_of_match);
 -- 
-2.51.2
+2.52.0
 
 
-From 861aaa5f0b9af1df8e692b9acc367293ec285213 Mon Sep 17 00:00:00 2001
+From 2734437fb38d628720e72bfd44f7118afbf0d669 Mon Sep 17 00:00:00 2001
 From: Prathamesh Shete <pshete@nvidia.com>
 Date: Wed, 19 Jun 2024 09:58:54 +0000
-Subject: [PATCH 03/21] NVIDIA: SAUCE: gpio: t264: add GPIO support for T264
+Subject: [PATCH 03/27] NVIDIA: SAUCE: gpio: t264: add GPIO support for T264
 
 Add required support for T264 GPIO
 
@@ -395,13 +395,13 @@ index 000000000000..c5749e489e03
 +
 +#endif
 -- 
-2.51.2
+2.52.0
 
 
-From 82c4e9b13a28b6a908468c7395d9e5b6ae063e4c Mon Sep 17 00:00:00 2001
+From 88d831e5af57e49702af00eedd32e55ad2bd811b Mon Sep 17 00:00:00 2001
 From: Prathamesh Shete <pshete@nvidia.com>
 Date: Wed, 19 Jun 2024 10:46:38 +0000
-Subject: [PATCH 04/21] NVIDIA: SAUCE: pinctrl: t264: Add pinctrl support for
+Subject: [PATCH 04/27] NVIDIA: SAUCE: pinctrl: t264: Add pinctrl support for
  T264
 
 Add pinctrl support for T264
@@ -420,7 +420,7 @@ Signed-off-by: Noah Wager <noah.wager@canonical.com>
  create mode 100644 drivers/pinctrl/tegra/pinctrl-tegra264.c
 
 diff --git a/drivers/pinctrl/Kconfig b/drivers/pinctrl/Kconfig
-index 354536de564b..d255c6fb137d 100644
+index 9aae4f5b6562..8ecc568feb2c 100644
 --- a/drivers/pinctrl/Kconfig
 +++ b/drivers/pinctrl/Kconfig
 @@ -31,6 +31,13 @@ config DEBUG_PINCTRL
@@ -2692,13 +2692,13 @@ index 000000000000..8b953b8bf1e6
 +}
 +arch_initcall(tegra264_pinctrl_init);
 -- 
-2.51.2
+2.52.0
 
 
-From 5a31fd4cc8c62fb6e8596b259777e62c0168317f Mon Sep 17 00:00:00 2001
+From 41616474992f09e0330ed8f2b55f3ff0cdd905ae Mon Sep 17 00:00:00 2001
 From: Laxman Dewangan <ldewangan@nvidia.com>
 Date: Sat, 24 Aug 2024 10:27:30 +0000
-Subject: [PATCH 05/21] NVIDIA: SAUCE: pinctrl: Remove duplication of
+Subject: [PATCH 05/27] NVIDIA: SAUCE: pinctrl: Remove duplication of
  PINCTRL_TEGRA264 definition
 
 Remove the duplication of conifg definition in the Kconfigs.
@@ -2717,7 +2717,7 @@ Signed-off-by: Noah Wager <noah.wager@canonical.com>
  2 files changed, 1 insertion(+), 7 deletions(-)
 
 diff --git a/drivers/pinctrl/Kconfig b/drivers/pinctrl/Kconfig
-index d255c6fb137d..354536de564b 100644
+index 8ecc568feb2c..9aae4f5b6562 100644
 --- a/drivers/pinctrl/Kconfig
 +++ b/drivers/pinctrl/Kconfig
 @@ -31,13 +31,6 @@ config DEBUG_PINCTRL
@@ -2747,13 +2747,13 @@ index 9392c2c43cc8..b838a8561c5e 100644
  	help
  	  Enable support for the NVIDIA Tegra264 SoC.
 -- 
-2.51.2
+2.52.0
 
 
-From 3005d96d78166ae0ae8e7b2b1e08548f7b9e5c27 Mon Sep 17 00:00:00 2001
+From 71ac868dd0cdf4295c9b2267e333d2b827e88b26 Mon Sep 17 00:00:00 2001
 From: Gautham Srinivasan <gauthams@nvidia.com>
 Date: Wed, 17 Jul 2024 10:22:32 +0000
-Subject: [PATCH 06/21] NVIDIA: SAUCE: gpio-tegra: enable GTE for T264
+Subject: [PATCH 06/27] NVIDIA: SAUCE: gpio-tegra: enable GTE for T264
 
 Set has_gte flag to enable GTE for T264 AON pins.
 
@@ -2779,48 +2779,13 @@ index 76eaf4f44a29..fe63bc9a5be2 100644
  
  static const struct of_device_id tegra186_gpio_of_match[] = {
 -- 
-2.51.2
+2.52.0
 
 
-From 3f6eb13e4b80c16195ad7d2e64383cf65d6319a6 Mon Sep 17 00:00:00 2001
-From: Nick Cao <nickcao@nichi.co>
-Date: Mon, 27 Oct 2025 12:34:16 -0400
-Subject: [PATCH 07/21] fixup! soc/tegra: pmc: Add Tegra264 support
-
----
- drivers/soc/tegra/pmc.c | 11 ++++++++---
- 1 file changed, 8 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-index da7309c1acfa..3eafe3fc7457 100644
---- a/drivers/soc/tegra/pmc.c
-+++ b/drivers/soc/tegra/pmc.c
-@@ -2892,9 +2892,14 @@ static int tegra_pmc_probe(struct platform_device *pdev)
- 		if (IS_ERR(pmc->wake))
- 			return PTR_ERR(pmc->wake);
- 
--		pmc->aotag = devm_platform_ioremap_resource_byname(pdev, "aotag");
--		if (IS_ERR(pmc->aotag))
--			return PTR_ERR(pmc->aotag);
-+		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "aotag");
-+		if (res) {
-+			pmc->aotag = devm_ioremap_resource(&pdev->dev, res);
-+			if (IS_ERR(pmc->aotag))
-+				return PTR_ERR(pmc->aotag);
-+		} else {
-+			pmc->aotag = NULL;
-+		}
- 
- 		/* "scratch" is an optional aperture */
- 		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
--- 
-2.51.2
-
-
-From 726b98aa2e152cde6f8acd77be3d0a81bd071c58 Mon Sep 17 00:00:00 2001
+From 587147ca3b793b13635b4468facae4f048ee0b37 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Thu, 20 Jun 2024 06:11:39 +0000
-Subject: [PATCH 08/21] NVIDIA: SAUCE: phy: xusb: skip USB2 PAD tracking and
+Subject: [PATCH 07/27] NVIDIA: SAUCE: phy: xusb: skip USB2 PAD tracking and
  fuse
 
 The USB2 PAD tracking clock is not necessary a dedicated clock.
@@ -2908,13 +2873,13 @@ index b3302e9c7896..b6266b3ee1c9 100644
  
  struct tegra_xusb_padctl {
 -- 
-2.51.2
+2.52.0
 
 
-From f49d3febc6c410641d63d0637ca7642616608200 Mon Sep 17 00:00:00 2001
+From 4242787bf00f6e14846798c30ee3775325cb72e6 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Tue, 18 Jun 2024 06:59:42 +0000
-Subject: [PATCH 09/21] NVIDIA: SAUCE: usb: xhci: skip mbox configuration
+Subject: [PATCH 08/27] NVIDIA: SAUCE: usb: xhci: skip mbox configuration
 
 This change skips the mbox configuration for the
 project that doesn't need this.
@@ -2962,13 +2927,13 @@ index 718e2ae6cd21..2839f22c7f01 100644
  	.has_bar2 = true,
  };
 -- 
-2.51.2
+2.52.0
 
 
-From ac1d9671665873415015b1d62c52d0e752be5657 Mon Sep 17 00:00:00 2001
+From 8314edb0c96bba5b6bcc84bfb4987e407eb915a7 Mon Sep 17 00:00:00 2001
 From: Wayne Chang <waynec@nvidia.com>
 Date: Tue, 13 Aug 2024 02:40:11 +0000
-Subject: [PATCH 10/21] NVIDIA: SAUCE: phy: tegra: Increase timeout for
+Subject: [PATCH 09/27] NVIDIA: SAUCE: phy: tegra: Increase timeout for
  USB2_TRK_COMPLETED polling
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
@@ -3006,13 +2971,13 @@ index 1a2fc809ebd5..a24e3db8d5b5 100644
  			/* The failure with polling on trk complete will not
  			 * cause the failure of powering on the bias pad.
 -- 
-2.51.2
+2.52.0
 
 
-From 17be13c2a3edc152c4e7755e5faf17414c2a4d07 Mon Sep 17 00:00:00 2001
+From 40edba7b8d78315d2f8bf45f6eacc970328a2444 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 4 Nov 2022 15:47:29 +0530
-Subject: [PATCH 11/21] NVIDIA: SAUCE: dmaengine: tegra: Get slave channel
+Subject: [PATCH 10/27] NVIDIA: SAUCE: dmaengine: tegra: Get slave channel
  based on DT
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
@@ -3148,13 +3113,13 @@ index 4d6fe0efa76e..b1e02848d968 100644
  {
  	const struct tegra_dma_chip_data *cdata = NULL;
 -- 
-2.51.2
+2.52.0
 
 
-From 988525774c287212d4d325e678ee0af47bb74c71 Mon Sep 17 00:00:00 2001
+From 191a41166c52d86c13edfcbbb2b4e846413909cc Mon Sep 17 00:00:00 2001
 From: Manish Bhardwaj <mbhardwaj@nvidia.com>
 Date: Sat, 15 Jun 2024 19:58:46 +0000
-Subject: [PATCH 12/21] NVIDIA: SAUCE: gpcdma: fix crash in gpcdma driver
+Subject: [PATCH 11/27] NVIDIA: SAUCE: gpcdma: fix crash in gpcdma driver
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
 
@@ -3194,13 +3159,13 @@ index b1e02848d968..b63dd0322050 100644
  	chan = dma_get_slave_channel(&tdma->channels[chan_id].vc.chan);
  	if (!chan)
 -- 
-2.51.2
+2.52.0
 
 
-From 3a1f93e979cb489366c5c3c23281b3e4bb5a8d61 Mon Sep 17 00:00:00 2001
+From abb8f03a5f5091371add478f3c454a1c50728fdc Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 21:11:58 +0530
-Subject: [PATCH 13/21] NVIDIA: SAUCE: dmaengine: tegra: Use struct for
+Subject: [PATCH 12/27] NVIDIA: SAUCE: dmaengine: tegra: Use struct for
  register offsets
 
 Move all DMA channel registers to a struct and update all register reads
@@ -3864,13 +3829,13 @@ index b63dd0322050..9b5bca55b9dc 100644
  		tdc->tdma = tdma;
  		tdc->id = i;
 -- 
-2.51.2
+2.52.0
 
 
-From 5164a7c2ae7f8a85615e2b307b44b53b996d2f58 Mon Sep 17 00:00:00 2001
+From 3ad81438c953ab4bae59343d4987282ce38f6611 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 21:59:37 +0530
-Subject: [PATCH 14/21] NVIDIA: SAUCE: dmaengine: tegra: Support more than 40
+Subject: [PATCH 13/27] NVIDIA: SAUCE: dmaengine: tegra: Support more than 40
  bits address width
 
 Add support for address width of more than 40 bits. Till Tegra234 in
@@ -4121,13 +4086,13 @@ index 9b5bca55b9dc..e4634966a633 100644
  	.max_dma_count = SZ_1G,
  	.hw_support_pause = true,
 -- 
-2.51.2
+2.52.0
 
 
-From cd4c252430c998dad31df184849791a7b891d8d6 Mon Sep 17 00:00:00 2001
+From a64ba8d915301ad6fac678169b811c8982a5355a Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 22:18:39 +0530
-Subject: [PATCH 15/21] NVIDIA: SAUCE: dmaengine: tegra: Add Tegra264 support
+Subject: [PATCH 14/27] NVIDIA: SAUCE: dmaengine: tegra: Add Tegra264 support
 
 Update compatible and chip data to support GPCDMA in Tegra264.
 
@@ -4199,13 +4164,13 @@ index e4634966a633..2edce19f8e59 100644
  	},
  };
 -- 
-2.51.2
+2.52.0
 
 
-From 950b1996899044736114ec66aac2c354317ba59b Mon Sep 17 00:00:00 2001
+From bed4204275ee8708fc50b6dd562600a4948d6e07 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Wed, 16 Aug 2023 09:44:52 +0530
-Subject: [PATCH 16/21] NVIDIA: SAUCE: dmaengine: tegra: Remove reset control
+Subject: [PATCH 15/27] NVIDIA: SAUCE: dmaengine: tegra: Remove reset control
 
 The reset is expected to be controlled from the bootloader and should
 be done by the time it reaches kernel. Therefore a reset in the
@@ -4277,13 +4242,13 @@ index 2edce19f8e59..f98e19b3fe36 100644
  		struct tegra_dma_channel *tdc = &tdma->channels[i];
  
 -- 
-2.51.2
+2.52.0
 
 
-From ebabb889d54c532695ca57f3425984070acfc336 Mon Sep 17 00:00:00 2001
+From be874320395434f6ff2999c33df2323a67a838dd Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Tue, 4 Apr 2023 12:04:31 +0000
-Subject: [PATCH 17/21] NVIDIA: SAUCE: spi: add "tegra-spidev" compatible
+Subject: [PATCH 16/27] NVIDIA: SAUCE: spi: add "tegra-spidev" compatible
  string.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
@@ -4318,13 +4283,13 @@ index 5300c942a2a4..8fef8c6ffeff 100644
  };
  MODULE_DEVICE_TABLE(of, spidev_dt_ids);
 -- 
-2.51.2
+2.52.0
 
 
-From 37245596d8199359777cea5737a42798bd6cf255 Mon Sep 17 00:00:00 2001
+From 69dd1636c9c83411d319905b91e01ed3693265cd Mon Sep 17 00:00:00 2001
 From: Gautham Srinivasan <gauthams@nvidia.com>
 Date: Wed, 24 May 2023 17:22:20 +0000
-Subject: [PATCH 18/21] NVIDIA: SAUCE: spi: add "tegra-spidev" name string.
+Subject: [PATCH 17/27] NVIDIA: SAUCE: spi: add "tegra-spidev" name string.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
 
@@ -4358,13 +4323,13 @@ index 8fef8c6ffeff..fe5033c24a68 100644
  };
  MODULE_DEVICE_TABLE(spi, spidev_spi_ids);
 -- 
-2.51.2
+2.52.0
 
 
-From be710ad9ea162fdf734aa8ee74396a7c09dc86bc Mon Sep 17 00:00:00 2001
+From f593ceda477cca2aa144d77d7926fbc43e201c6a Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Tue, 12 Dec 2023 11:00:52 +0000
-Subject: [PATCH 19/21] NVIDIA: SAUCE: drivers: spi: fix warnings in spi
+Subject: [PATCH 18/27] NVIDIA: SAUCE: drivers: spi: fix warnings in spi
  controller.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
@@ -4403,13 +4368,13 @@ index 795a8482c2c7..3ac19d4bb216 100644
  	    (hold->value && hold->unit != SPI_DELAY_UNIT_SCK) ||
  	    (inactive->value && inactive->unit != SPI_DELAY_UNIT_SCK)) {
 -- 
-2.51.2
+2.52.0
 
 
-From 651c3dadc21d0dc713cde80eb6ec6121ea788731 Mon Sep 17 00:00:00 2001
+From f0728f34d80818c3643ffe4544fc021646fdb09f Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Wed, 13 Dec 2023 09:13:37 +0000
-Subject: [PATCH 20/21] NVIDIA: SAUCE: drivers: spi: fix warnings in spi core.
+Subject: [PATCH 19/27] NVIDIA: SAUCE: drivers: spi: fix warnings in spi core.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
 
@@ -4446,13 +4411,13 @@ index eb4076c0d040..c8ff9f5f9f41 100644
  		if (IS_ERR(spi)) {
  			dev_warn(&ctlr->dev,
 -- 
-2.51.2
+2.52.0
 
 
-From 71796ec913e4d048f9ca80cc6ad429d615e2a2d4 Mon Sep 17 00:00:00 2001
+From 3f61433da1fdf7b2f0623f4cf196b8a0a978a9c9 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Mon, 14 Aug 2023 20:33:31 +0000
-Subject: [PATCH 21/21] NVIDIA: SAUCE: spi: spi-tegra114: retain the spi mode
+Subject: [PATCH 20/27] NVIDIA: SAUCE: spi: spi-tegra114: retain the spi mode
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
 
@@ -4529,5 +4494,515 @@ index 3ac19d4bb216..5c4f2e832023 100644
  	tegra_spi_writel(tspi, tspi->def_command1_reg, SPI_COMMAND1);
  	tspi->spi_cs_timing1 = tegra_spi_readl(tspi, SPI_CS_TIMING1);
 -- 
-2.51.2
+2.52.0
+
+
+From 56493d85058cac429c2d3279edb14d5ce1dacf1a Mon Sep 17 00:00:00 2001
+From: Prathamesh Shete <pshete@nvidia.com>
+Date: Fri, 14 Nov 2025 16:17:11 +0000
+Subject: [PATCH 21/27] soc/tegra: pmc: Don't fail if "aotag" is not present
+
+The "aotog" is an optional aperture, so if that aperture is not defined
+for a given device, then initialise the 'aotag' pointer to NULL instead
+of returning an error. Note that the PMC driver will not use 'aotag'
+pointer if initialised to NULL.
+
+Co-developed-by: Shardar Mohammed <smohammed@nvidia.com>
+Signed-off-by: Shardar Mohammed <smohammed@nvidia.com>
+Signed-off-by: Prathamesh Shete <pshete@nvidia.com>
+Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/soc/tegra/pmc.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
+index da7309c1acfa..7fb94a31a0b6 100644
+--- a/drivers/soc/tegra/pmc.c
++++ b/drivers/soc/tegra/pmc.c
+@@ -2892,9 +2892,16 @@ static int tegra_pmc_probe(struct platform_device *pdev)
+ 		if (IS_ERR(pmc->wake))
+ 			return PTR_ERR(pmc->wake);
+ 
+-		pmc->aotag = devm_platform_ioremap_resource_byname(pdev, "aotag");
+-		if (IS_ERR(pmc->aotag))
+-			return PTR_ERR(pmc->aotag);
++		/* "aotag" is an optional aperture */
++		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
++						   "aotag");
++		if (res) {
++			pmc->aotag = devm_ioremap_resource(&pdev->dev, res);
++			if (IS_ERR(pmc->aotag))
++				return PTR_ERR(pmc->aotag);
++		} else {
++			pmc->aotag = NULL;
++		}
+ 
+ 		/* "scratch" is an optional aperture */
+ 		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+-- 
+2.52.0
+
+
+From c00c1b42bc4fb7d5f8ae21f625e77bd75336dbc4 Mon Sep 17 00:00:00 2001
+From: Martin Radev <mradev@nvidia.com>
+Date: Sun, 28 Jul 2024 13:19:36 +0300
+Subject: [PATCH 22/27] NVIDIA: SAUCE: PCI: Disable HDA enablement on Tegra
+ iGPU
+
+This patch disables HDA enablement for Tegra iGPUs
+because HDA is not part of GPU on Tegra. Rather,
+HDA is another platform device and does not require
+the same WAR as on Desktop GPUs.
+
+http://nvbugs/4765839
+http://nvbugs/4781662
+
+Signed-off-by: Martin Radev <mradev@nvidia.com>
+Signed-off-by: Laxman Dewangan <ldewangan@nvidia.com>
+Acked-by: Noah Wager <noah.wager@canonical.com>
+Acked-by: Jacob Martin <jacob.martin@canonical.com>
+Signed-off-by: Noah Wager <noah.wager@canonical.com>
+---
+ drivers/pci/quirks.c    | 7 +++++++
+ include/linux/pci_ids.h | 1 +
+ 2 files changed, 8 insertions(+)
+
+diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+index 5a1a41d5e8d1..479f8ae73b56 100644
+--- a/drivers/pci/quirks.c
++++ b/drivers/pci/quirks.c
+@@ -5781,6 +5781,13 @@ static void quirk_nvidia_hda(struct pci_dev *gpu)
+ 	if (gpu->device < PCI_DEVICE_ID_NVIDIA_GEFORCE_320M)
+ 		return;
+ 
++	/*
++	 * Skip HDA enablement on Tegra PCI iGPU because HDA is
++	 * a platform device on Tegra SoCs.
++	 */
++	if (gpu->device == PCI_DEVICE_ID_NVIDIA_TEGRA_T264)
++		return;
++
+ 	/* Bit 25 at offset 0x488 enables the HDA controller */
+ 	pci_read_config_dword(gpu, 0x488, &val);
+ 	if (val & BIT(25))
+diff --git a/include/linux/pci_ids.h b/include/linux/pci_ids.h
+index 3be85e28b81f..67503ba66093 100644
+--- a/include/linux/pci_ids.h
++++ b/include/linux/pci_ids.h
+@@ -1383,6 +1383,7 @@
+ #define PCI_DEVICE_ID_NVIDIA_GEFORCE_320M           0x08A0
+ #define PCI_DEVICE_ID_NVIDIA_NFORCE_MCP79_SMBUS     0x0AA2
+ #define PCI_DEVICE_ID_NVIDIA_NFORCE_MCP89_SATA	    0x0D85
++#define PCI_DEVICE_ID_NVIDIA_TEGRA_T264             0x2B00
+ 
+ #define PCI_VENDOR_ID_IMS		0x10e0
+ #define PCI_DEVICE_ID_IMS_TT128		0x9128
+-- 
+2.52.0
+
+
+From 93de86bf6f51d3809590ab803d85bc16cf31f9cd Mon Sep 17 00:00:00 2001
+From: Xingang Wang <wangxingang5@huawei.com>
+Date: Thu, 7 Nov 2024 13:29:15 +0530
+Subject: [PATCH 23/27] iommu/of: Fix pci_request_acs() before enumerating PCI
+ devices
+
+When booting with devicetree, the pci_request_acs() is called after the
+enumeration and initialization of PCI devices, thus the ACS is not
+enabled. And ACS should be enabled when IOMMU is detected for the
+PCI host bridge, so add check for IOMMU before probe of PCI host and call
+pci_request_acs() to make sure ACS will be enabled when enumerating PCI
+devices.
+
+Change-Id: I4b9742de67850d51cdefd5217be0a82fb386a530
+Fixes: 6bf6c24720d33 ("iommu/of: Request ACS from the PCI core when configuring IOMMU linkage")
+Signed-off-by: Xingang Wang <wangxingang5@huawei.com>
+Signed-off-by: Pavankumar Kondeti <quic_pkondeti@quicinc.com>
+Reviewed-on: https://git-master.nvidia.com/r/c/3rdparty/canonical/linux-noble/+/3388469
+GVS: buildbot_gerritrpt <buildbot_gerritrpt@nvidia.com>
+Tested-by: Jordan Niethe <jniethe@nvidia.com>
+Reviewed-by: Pritesh Raithatha <praithatha@nvidia.com>
+---
+ drivers/iommu/of_iommu.c | 1 -
+ drivers/pci/of.c         | 8 +++++++-
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
+index 6b989a62def2..c31369924944 100644
+--- a/drivers/iommu/of_iommu.c
++++ b/drivers/iommu/of_iommu.c
+@@ -141,7 +141,6 @@ int of_iommu_configure(struct device *dev, struct device_node *master_np,
+ 			.np = master_np,
+ 		};
+ 
+-		pci_request_acs();
+ 		err = pci_for_each_dma_alias(to_pci_dev(dev),
+ 					     of_pci_iommu_init, &info);
+ 		of_pci_check_device_ats(dev, master_np);
+diff --git a/drivers/pci/of.c b/drivers/pci/of.c
+index 3579265f1198..0a6a35936387 100644
+--- a/drivers/pci/of.c
++++ b/drivers/pci/of.c
+@@ -638,9 +638,15 @@ static int pci_parse_request_of_pci_ranges(struct device *dev,
+ 
+ int devm_of_pci_bridge_init(struct device *dev, struct pci_host_bridge *bridge)
+ {
+-	if (!dev->of_node)
++	struct device_node *node = dev->of_node;
++
++	if (!node)
+ 		return 0;
+ 
++	/* Detect IOMMU and make sure ACS will be enabled */
++	if (of_property_read_bool(node, "iommu-map"))
++		pci_request_acs();
++
+ 	bridge->swizzle_irq = pci_common_swizzle;
+ 	bridge->map_irq = of_irq_parse_and_map_pci;
+ 
+-- 
+2.52.0
+
+
+From 617a57f7192d5a0aaeeebcb2e75a619a28d27364 Mon Sep 17 00:00:00 2001
+From: Jeffy Chen <jeffy.chen@rock-chips.com>
+Date: Wed, 8 Feb 2023 16:46:42 +0530
+Subject: [PATCH 24/27] NVIDIA: SAUCE: of/irq: Adjust of_pci_irq parsing for
+ multiple interrupts
+
+BugLink: https://bugs.launchpad.net/bugs/2080908
+
+Currently we are considering the first irq as the PCI interrupt pin,
+but a PCI device may have multiple interrupts(e.g. PCIe WAKE# pin).
+
+Only parse the PCI interrupt pin when the irq is unnamed or named as
+"pci".
+
+http://nvbugs/4478230
+
+Signed-off-by: Jeffy Chen <jeffy.chen@rock-chips.com>
+Signed-off-by: Manikanta Maddireddy <mmaddireddy@nvidia.com>
+Reviewed-by: Thierry Reding <treding@nvidia.com>
+(cherry-picked from https://patchwork.ozlabs.org/project/linux-pci/
+patch/20230208111645.3863534-3-mmaddireddy@nvidia.com)
+Signed-off-by: Laxman Dewangan <ldewangan@nvidia.com>
+Acked-by: Noah Wager <noah.wager@canonical.com>
+Acked-by: Jacob Martin <jacob.martin@canonical.com>
+Signed-off-by: Noah Wager <noah.wager@canonical.com>
+---
+ drivers/pci/of.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/pci/of.c b/drivers/pci/of.c
+index 0a6a35936387..8ecd72fa318c 100644
+--- a/drivers/pci/of.c
++++ b/drivers/pci/of.c
+@@ -474,9 +474,17 @@ static int of_irq_parse_pci(const struct pci_dev *pdev, struct of_phandle_args *
+ 	 */
+ 	dn = pci_device_to_OF_node(pdev);
+ 	if (dn) {
+-		rc = of_irq_parse_one(dn, 0, out_irq);
+-		if (!rc)
+-			return rc;
++		int index;
++
++		index = of_property_match_string(dn, "interrupt-names", "pci");
++		if (index == -EINVAL)	/* Property doesn't exist */
++			index = 0;
++
++		if (index >= 0) {
++			rc = of_irq_parse_one(dn, index, out_irq);
++			if (!rc)
++				return rc;
++		}
+ 	}
+ 
+ 	/*
+-- 
+2.52.0
+
+
+From 1196c895ca775a30a5a39cdb578247aa8d7347bf Mon Sep 17 00:00:00 2001
+From: Sheetal <sheetal@nvidia.com>
+Date: Fri, 31 Oct 2025 11:38:24 +0000
+Subject: [PATCH 25/27] dmaengine: tegra-adma: Fix use-after-free
+
+A use-after-free bug exists in the Tegra ADMA driver when audio streams
+are terminated, particularly during XRUN conditions. The issue occurs
+when the DMA buffer is freed by tegra_adma_terminate_all() before the
+vchan completion tasklet finishes accessing it.
+
+The race condition follows this sequence:
+
+  1. DMA transfer completes, triggering an interrupt that schedules the
+     completion tasklet (tasklet has not executed yet)
+  2. Audio playback stops, calling tegra_adma_terminate_all() which
+     frees the DMA buffer memory via kfree()
+  3. The scheduled tasklet finally executes, calling vchan_complete()
+     which attempts to access the already-freed memory
+
+Since tasklets can execute at any time after being scheduled, there is
+no guarantee that the buffer will remain valid when vchan_complete()
+runs.
+
+Fix this by properly synchronizing the virtual channel completion:
+ - Calling vchan_terminate_vdesc() in tegra_adma_stop() to mark the
+   descriptors as terminated instead of freeing the descriptor.
+ - Add the callback tegra_adma_synchronize() that calls
+   vchan_synchronize() which kills any pending tasklets and frees any
+   terminated descriptors.
+
+Crash logs:
+[  337.427523] BUG: KASAN: use-after-free in vchan_complete+0x124/0x3b0
+[  337.427544] Read of size 8 at addr ffff000132055428 by task swapper/0/0
+
+[  337.427562] Call trace:
+[  337.427564]  dump_backtrace+0x0/0x320
+[  337.427571]  show_stack+0x20/0x30
+[  337.427575]  dump_stack_lvl+0x68/0x84
+[  337.427584]  print_address_description.constprop.0+0x74/0x2b8
+[  337.427590]  kasan_report+0x1f4/0x210
+[  337.427598]  __asan_load8+0xa0/0xd0
+[  337.427603]  vchan_complete+0x124/0x3b0
+[  337.427609]  tasklet_action_common.constprop.0+0x190/0x1d0
+[  337.427617]  tasklet_action+0x30/0x40
+[  337.427623]  __do_softirq+0x1a0/0x5c4
+[  337.427628]  irq_exit+0x110/0x140
+[  337.427633]  handle_domain_irq+0xa4/0xe0
+[  337.427640]  gic_handle_irq+0x64/0x160
+[  337.427644]  call_on_irq_stack+0x20/0x4c
+[  337.427649]  do_interrupt_handler+0x7c/0x90
+[  337.427654]  el1_interrupt+0x30/0x80
+[  337.427659]  el1h_64_irq_handler+0x18/0x30
+[  337.427663]  el1h_64_irq+0x7c/0x80
+[  337.427667]  cpuidle_enter_state+0xe4/0x540
+[  337.427674]  cpuidle_enter+0x54/0x80
+[  337.427679]  do_idle+0x2e0/0x380
+[  337.427685]  cpu_startup_entry+0x2c/0x70
+[  337.427690]  rest_init+0x114/0x130
+[  337.427695]  arch_call_rest_init+0x18/0x24
+[  337.427702]  start_kernel+0x380/0x3b4
+[  337.427706]  __primary_switched+0xc0/0xc8
+
+Fixes: f46b195799b5 ("dmaengine: tegra-adma: Add support for Tegra210 ADMA")
+
+Bug 5638368
+Bug 4879633
+
+Change-Id: I2ea7f38ef7041db2fac63d1e62ecdef04fb929de
+Signed-off-by: sheetal <sheetal@nvidia.com>
+Reviewed-on: https://git-master.nvidia.com/r/c/3rdparty/canonical/linux-noble/+/3482483
+Reviewed-by: svcacv <svcacv@nvidia.com>
+Reviewed-by: Sameer Pujar <spujar@nvidia.com>
+GVS: buildbot_gerritrpt <buildbot_gerritrpt@nvidia.com>
+Reviewed-by: Mohan kumar <mkumard@nvidia.com>
+---
+ drivers/dma/tegra210-adma.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/dma/tegra210-adma.c b/drivers/dma/tegra210-adma.c
+index 864a8c55f33b..c82b38f6659f 100644
+--- a/drivers/dma/tegra210-adma.c
++++ b/drivers/dma/tegra210-adma.c
+@@ -429,10 +429,17 @@ static void tegra_adma_stop(struct tegra_adma_chan *tdc)
+ 		return;
+ 	}
+ 
+-	kfree(tdc->desc);
++	vchan_terminate_vdesc(&tdc->desc->vd);
+ 	tdc->desc = NULL;
+ }
+ 
++static void tegra_adma_synchronize(struct dma_chan *dc)
++{
++	struct tegra_adma_chan *tdc = to_tegra_adma_chan(dc);
++
++	vchan_synchronize(&tdc->vc);
++}
++
+ static void tegra_adma_start(struct tegra_adma_chan *tdc)
+ {
+ 	struct virt_dma_desc *vd = vchan_next_desc(&tdc->vc);
+@@ -1151,6 +1158,7 @@ static int tegra_adma_probe(struct platform_device *pdev)
+ 	tdma->dma_dev.device_config = tegra_adma_slave_config;
+ 	tdma->dma_dev.device_tx_status = tegra_adma_tx_status;
+ 	tdma->dma_dev.device_terminate_all = tegra_adma_terminate_all;
++	tdma->dma_dev.device_synchronize = tegra_adma_synchronize;
+ 	tdma->dma_dev.src_addr_widths = BIT(DMA_SLAVE_BUSWIDTH_4_BYTES);
+ 	tdma->dma_dev.dst_addr_widths = BIT(DMA_SLAVE_BUSWIDTH_4_BYTES);
+ 	tdma->dma_dev.directions = BIT(DMA_DEV_TO_MEM) | BIT(DMA_MEM_TO_DEV);
+-- 
+2.52.0
+
+
+From 86fc4215429807019831600a3b1825db60817239 Mon Sep 17 00:00:00 2001
+From: Pritesh Raithatha <praithatha@nvidia.com>
+Date: Thu, 17 Apr 2025 03:04:36 -0700
+Subject: [PATCH 26/27] iommu/arm-smmu-v3: use reserved memory for allocations
+
+CMA allocations are reusable. When not allocated, it can be used
+for temporary allocations. When there is allocation request,
+temporary allocations will be reclaimed and that takes time.
+
+SMMU uses CMA allocations and causing boot time increase. To avoid
+this, add reserved memory pool and use for SMMU allocations instead
+of CMA.
+
+With reserved memory 1MB allocation time is reduced from 17999343ns
+to 166037ns.
+
+Bug 5115195
+
+Change-Id: I34febac4235da68027908969b9348cbfd2feffc4
+Signed-off-by: Pritesh Raithatha <praithatha@nvidia.com>
+Reviewed-on: https://git-master.nvidia.com/r/c/3rdparty/canonical/linux-noble/+/3446227
+Reviewed-by: svcacv <svcacv@nvidia.com>
+GVS: buildbot_gerritrpt <buildbot_gerritrpt@nvidia.com>
+Reviewed-by: Bharat Nihalani <bnihalani@nvidia.com>
+Tested-by: Bharat Nihalani <bnihalani@nvidia.com>
+---
+ drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c b/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c
+index c9776cf74717..57d2aa677051 100644
+--- a/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c
++++ b/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c
+@@ -2,7 +2,8 @@
+ /*
+  * IOMMU API for ARM architected SMMUv3 implementations.
+  *
+- * Copyright (C) 2015 ARM Limited
++ * SPDX-FileCopyrightText: Copyright (C) 2015 ARM Limited
++ * SPDX-FileCopyrightText: Copyright (c) 2023-2025, NVIDIA CORPORATION. All rights reserved.
+  *
+  * Author: Will Deacon <will.deacon@arm.com>
+  *
+@@ -23,6 +24,7 @@
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+ #include <linux/of_platform.h>
++#include <linux/of_reserved_mem.h>
+ #include <linux/pci.h>
+ #include <linux/pci-ats.h>
+ #include <linux/platform_device.h>
+@@ -4621,6 +4623,9 @@ static int arm_smmu_device_dt_probe(struct platform_device *pdev,
+ 	u32 cells;
+ 	int ret = -EINVAL;
+ 
++	if (!of_reserved_mem_device_init(dev))
++		dev_info(dev, "using device-specific reserved memory\n");
++
+ 	if (of_property_read_u32(dev->of_node, "#iommu-cells", &cells))
+ 		dev_err(dev, "missing #iommu-cells property\n");
+ 	else if (cells != 1)
+-- 
+2.52.0
+
+
+From 06b873a8903607fa21056415f70bd6238742a369 Mon Sep 17 00:00:00 2001
+From: Ashish Mhetre <amhetre@nvidia.com>
+Date: Tue, 12 Aug 2025 06:32:27 +0000
+Subject: [PATCH 27/27] iommu/arm-smmu-v3: Implement WAR for Tegra264 Errata
+ T264-SMMU-3
+
+If there is active traffic on a page while it is being invalidated, it
+is possible that the intended invalidated entry is not properly evicted
+from the SMMU TLB caches. Subsequent requests to the same virtual
+address could get the older mapping and access the wrong location, which
+can be a functional and a security problem.
+Repeat the entire invalidation->sync sequence once for every
+invalidation queued. The second set of invalidation + sync commands is
+guaranteed to evict the entry out of all TLBs.
+
+Bug 5448714
+Bug 5150304
+
+Change-Id: I40e891a1459f4c65e4e2e7f0224867d6c1be277a
+(cherry-picked from commit 27c7fb19c438457aabe7d7b4812bf88778750017)
+Signed-off-by: Ashish Mhetre <amhetre@nvidia.com>
+Reviewed-on: https://git-master.nvidia.com/r/c/3rdparty/canonical/linux-noble/+/3496080
+GVS: buildbot_gerritrpt <buildbot_gerritrpt@nvidia.com>
+Reviewed-by: Pritesh Raithatha <praithatha@nvidia.com>
+---
+ drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c | 13 +++++++++++++
+ drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.h |  1 +
+ 2 files changed, 14 insertions(+)
+
+diff --git a/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c b/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c
+index 57d2aa677051..f8fbae287396 100644
+--- a/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c
++++ b/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.c
+@@ -83,6 +83,7 @@ DEFINE_MUTEX(arm_smmu_asid_lock);
+ static struct arm_smmu_option_prop arm_smmu_options[] = {
+ 	{ ARM_SMMU_OPT_SKIP_PREFETCH, "hisilicon,broken-prefetch-cmd" },
+ 	{ ARM_SMMU_OPT_PAGE0_REGS_ONLY, "cavium,cn9900-broken-page1-regspace"},
++	{ ARM_SMMU_OPT_TLBI_TWICE, "nvidia,tegra264-tlbi-race-fix"},
+ 	{ 0, NULL},
+ };
+ 
+@@ -1240,6 +1241,8 @@ static void arm_smmu_sync_cd(struct arm_smmu_master *master,
+ 	}
+ 
+ 	arm_smmu_cmdq_batch_submit(smmu, &cmds);
++	if (smmu->options & ARM_SMMU_OPT_TLBI_TWICE)
++		arm_smmu_cmdq_batch_submit(smmu, &cmds);
+ }
+ 
+ static void arm_smmu_write_cd_l1_desc(struct arm_smmu_cdtab_l1 *dst,
+@@ -2358,6 +2361,8 @@ static void arm_smmu_tlb_inv_range_domain(unsigned long iova, size_t size,
+ 		cmd.tlbi.vmid	= smmu_domain->s2_cfg.vmid;
+ 	}
+ 	__arm_smmu_tlb_inv_range(&cmd, iova, size, granule, smmu_domain);
++	if (smmu_domain->smmu->options & ARM_SMMU_OPT_TLBI_TWICE)
++		__arm_smmu_tlb_inv_range(&cmd, iova, size, granule, smmu_domain);
+ 
+ 	if (smmu_domain->nest_parent) {
+ 		/*
+@@ -2389,6 +2394,8 @@ void arm_smmu_tlb_inv_range_asid(unsigned long iova, size_t size, int asid,
+ 	};
+ 
+ 	__arm_smmu_tlb_inv_range(&cmd, iova, size, granule, smmu_domain);
++	if (smmu_domain->smmu->options & ARM_SMMU_OPT_TLBI_TWICE)
++		__arm_smmu_tlb_inv_range(&cmd, iova, size, granule, smmu_domain);
+ }
+ 
+ static void arm_smmu_tlb_inv_page_nosync(struct iommu_iotlb_gather *gather,
+@@ -4166,15 +4173,21 @@ static int arm_smmu_device_reset(struct arm_smmu_device *smmu)
+ 	/* Invalidate any cached configuration */
+ 	cmd.opcode = CMDQ_OP_CFGI_ALL;
+ 	arm_smmu_cmdq_issue_cmd_with_sync(smmu, &cmd);
++	if (smmu->options & ARM_SMMU_OPT_TLBI_TWICE)
++		arm_smmu_cmdq_issue_cmd_with_sync(smmu, &cmd);
+ 
+ 	/* Invalidate any stale TLB entries */
+ 	if (smmu->features & ARM_SMMU_FEAT_HYP) {
+ 		cmd.opcode = CMDQ_OP_TLBI_EL2_ALL;
+ 		arm_smmu_cmdq_issue_cmd_with_sync(smmu, &cmd);
++		if (smmu->options & ARM_SMMU_OPT_TLBI_TWICE)
++			arm_smmu_cmdq_issue_cmd_with_sync(smmu, &cmd);
+ 	}
+ 
+ 	cmd.opcode = CMDQ_OP_TLBI_NSNH_ALL;
+ 	arm_smmu_cmdq_issue_cmd_with_sync(smmu, &cmd);
++	if (smmu->options & ARM_SMMU_OPT_TLBI_TWICE)
++		arm_smmu_cmdq_issue_cmd_with_sync(smmu, &cmd);
+ 
+ 	/* Event queue */
+ 	writeq_relaxed(smmu->evtq.q.q_base, smmu->base + ARM_SMMU_EVTQ_BASE);
+diff --git a/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.h b/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.h
+index ae23aacc3840..0cda36d20f06 100644
+--- a/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.h
++++ b/drivers/iommu/arm/arm-smmu-v3/arm-smmu-v3.h
+@@ -775,6 +775,7 @@ struct arm_smmu_device {
+ #define ARM_SMMU_OPT_MSIPOLL		(1 << 2)
+ #define ARM_SMMU_OPT_CMDQ_FORCE_SYNC	(1 << 3)
+ #define ARM_SMMU_OPT_TEGRA241_CMDQV	(1 << 4)
++#define ARM_SMMU_OPT_TLBI_TWICE		(1 << 5)
+ 	u32				options;
+ 
+ 	struct arm_smmu_cmdq		cmdq;
+-- 
+2.52.0
 
