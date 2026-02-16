@@ -35,7 +35,7 @@ RUN --mount=from=build,source=/root/rpmbuild/RPMS,target=/kernel \
 FROM base AS devel
 ARG KVER
 RUN --mount=from=build,source=/root/rpmbuild/RPMS,target=/kernel \
-  dnf reinstall -y \
+  dnf install -y \
   /kernel/aarch64/kernel-devel-${KVER}.aarch64.rpm \
   /kernel/aarch64/kernel-devel-matched-${KVER}.aarch64.rpm \
   /kernel/aarch64/kernel-headers-${KVER}.aarch64.rpm
