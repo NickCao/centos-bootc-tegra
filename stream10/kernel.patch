@@ -1,7 +1,7 @@
-From cdf3de80fe762c1a35a1f7090baf7be9a0b50fd6 Mon Sep 17 00:00:00 2001
+From 8935f2e3106a46d8abdf2f09436b2529ffb4cbab Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Mon, 27 May 2024 10:08:04 +0000
-Subject: [PATCH 01/27] NVIDIA: SAUCE: phy: tegra: xusb: Add Tegra264 support
+Subject: [PATCH 01/26] NVIDIA: SAUCE: phy: tegra: xusb: Add Tegra264 support
 
 Add support for the XUSB pad controller for Tegra264. Most of
 the Tegra264 XUSB PADCTL registers definition and programming sequence
@@ -111,10 +111,10 @@ index d2b5f9565132..b3302e9c7896 100644
 2.52.0
 
 
-From e18952469d8980127ab8555d88698cadd47185f8 Mon Sep 17 00:00:00 2001
+From 64d01e62b3a1cccecb8840d665bc2f108d901293 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Mon, 27 May 2024 10:48:46 +0000
-Subject: [PATCH 02/27] NVIDIA: SAUCE: usb: host: xhci-tegra: Add Tegra264 XHCI
+Subject: [PATCH 02/26] NVIDIA: SAUCE: usb: host: xhci-tegra: Add Tegra264 XHCI
  support
 
 This commit adds Tegra264 XUSB host mode controller support.
@@ -178,10 +178,10 @@ index 0c7af44d4dae..718e2ae6cd21 100644
 2.52.0
 
 
-From 2734437fb38d628720e72bfd44f7118afbf0d669 Mon Sep 17 00:00:00 2001
+From 71a405862cb49edda3eee93ac770d8be8f2d7372 Mon Sep 17 00:00:00 2001
 From: Prathamesh Shete <pshete@nvidia.com>
 Date: Wed, 19 Jun 2024 09:58:54 +0000
-Subject: [PATCH 03/27] NVIDIA: SAUCE: gpio: t264: add GPIO support for T264
+Subject: [PATCH 03/26] NVIDIA: SAUCE: gpio: t264: add GPIO support for T264
 
 Add required support for T264 GPIO
 
@@ -398,10 +398,10 @@ index 000000000000..c5749e489e03
 2.52.0
 
 
-From 88d831e5af57e49702af00eedd32e55ad2bd811b Mon Sep 17 00:00:00 2001
+From dcc7e221319089be5d9a6ea4268e739fb875af3d Mon Sep 17 00:00:00 2001
 From: Prathamesh Shete <pshete@nvidia.com>
 Date: Wed, 19 Jun 2024 10:46:38 +0000
-Subject: [PATCH 04/27] NVIDIA: SAUCE: pinctrl: t264: Add pinctrl support for
+Subject: [PATCH 04/26] NVIDIA: SAUCE: pinctrl: t264: Add pinctrl support for
  T264
 
 Add pinctrl support for T264
@@ -2695,10 +2695,10 @@ index 000000000000..8b953b8bf1e6
 2.52.0
 
 
-From 41616474992f09e0330ed8f2b55f3ff0cdd905ae Mon Sep 17 00:00:00 2001
+From 33f9066881324718e8183a07ef45d37e64ee5796 Mon Sep 17 00:00:00 2001
 From: Laxman Dewangan <ldewangan@nvidia.com>
 Date: Sat, 24 Aug 2024 10:27:30 +0000
-Subject: [PATCH 05/27] NVIDIA: SAUCE: pinctrl: Remove duplication of
+Subject: [PATCH 05/26] NVIDIA: SAUCE: pinctrl: Remove duplication of
  PINCTRL_TEGRA264 definition
 
 Remove the duplication of conifg definition in the Kconfigs.
@@ -2750,10 +2750,10 @@ index 9392c2c43cc8..b838a8561c5e 100644
 2.52.0
 
 
-From 71ac868dd0cdf4295c9b2267e333d2b827e88b26 Mon Sep 17 00:00:00 2001
+From 7dd7a26dc0d23bb702ba71792f94521cbc2ebc5e Mon Sep 17 00:00:00 2001
 From: Gautham Srinivasan <gauthams@nvidia.com>
 Date: Wed, 17 Jul 2024 10:22:32 +0000
-Subject: [PATCH 06/27] NVIDIA: SAUCE: gpio-tegra: enable GTE for T264
+Subject: [PATCH 06/26] NVIDIA: SAUCE: gpio-tegra: enable GTE for T264
 
 Set has_gte flag to enable GTE for T264 AON pins.
 
@@ -2782,10 +2782,10 @@ index 76eaf4f44a29..fe63bc9a5be2 100644
 2.52.0
 
 
-From 587147ca3b793b13635b4468facae4f048ee0b37 Mon Sep 17 00:00:00 2001
+From 815e524df13f8e90c7f7b1fa8bba87108d857be8 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Thu, 20 Jun 2024 06:11:39 +0000
-Subject: [PATCH 07/27] NVIDIA: SAUCE: phy: xusb: skip USB2 PAD tracking and
+Subject: [PATCH 07/26] NVIDIA: SAUCE: phy: xusb: skip USB2 PAD tracking and
  fuse
 
 The USB2 PAD tracking clock is not necessary a dedicated clock.
@@ -2876,10 +2876,10 @@ index b3302e9c7896..b6266b3ee1c9 100644
 2.52.0
 
 
-From 4242787bf00f6e14846798c30ee3775325cb72e6 Mon Sep 17 00:00:00 2001
+From 95a236a779e7e134ff723260c3019e89044ca451 Mon Sep 17 00:00:00 2001
 From: Sing-Han Chen <singhanc@nvidia.com>
 Date: Tue, 18 Jun 2024 06:59:42 +0000
-Subject: [PATCH 08/27] NVIDIA: SAUCE: usb: xhci: skip mbox configuration
+Subject: [PATCH 08/26] NVIDIA: SAUCE: usb: xhci: skip mbox configuration
 
 This change skips the mbox configuration for the
 project that doesn't need this.
@@ -2930,10 +2930,10 @@ index 718e2ae6cd21..2839f22c7f01 100644
 2.52.0
 
 
-From 8314edb0c96bba5b6bcc84bfb4987e407eb915a7 Mon Sep 17 00:00:00 2001
+From 33b0e2044b3dee86e437adfc2dc3fcbde9e70605 Mon Sep 17 00:00:00 2001
 From: Wayne Chang <waynec@nvidia.com>
 Date: Tue, 13 Aug 2024 02:40:11 +0000
-Subject: [PATCH 09/27] NVIDIA: SAUCE: phy: tegra: Increase timeout for
+Subject: [PATCH 09/26] NVIDIA: SAUCE: phy: tegra: Increase timeout for
  USB2_TRK_COMPLETED polling
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
@@ -2974,10 +2974,10 @@ index 1a2fc809ebd5..a24e3db8d5b5 100644
 2.52.0
 
 
-From 40edba7b8d78315d2f8bf45f6eacc970328a2444 Mon Sep 17 00:00:00 2001
+From 9c8042239d58f39468a94cc5810c03089bff55f9 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 4 Nov 2022 15:47:29 +0530
-Subject: [PATCH 10/27] NVIDIA: SAUCE: dmaengine: tegra: Get slave channel
+Subject: [PATCH 10/26] NVIDIA: SAUCE: dmaengine: tegra: Get slave channel
  based on DT
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
@@ -3116,10 +3116,10 @@ index 4d6fe0efa76e..b1e02848d968 100644
 2.52.0
 
 
-From 191a41166c52d86c13edfcbbb2b4e846413909cc Mon Sep 17 00:00:00 2001
+From a51decb334c7bac27df9b0d7f2bc271691667897 Mon Sep 17 00:00:00 2001
 From: Manish Bhardwaj <mbhardwaj@nvidia.com>
 Date: Sat, 15 Jun 2024 19:58:46 +0000
-Subject: [PATCH 11/27] NVIDIA: SAUCE: gpcdma: fix crash in gpcdma driver
+Subject: [PATCH 11/26] NVIDIA: SAUCE: gpcdma: fix crash in gpcdma driver
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
 
@@ -3162,10 +3162,10 @@ index b1e02848d968..b63dd0322050 100644
 2.52.0
 
 
-From abb8f03a5f5091371add478f3c454a1c50728fdc Mon Sep 17 00:00:00 2001
+From 88296402bb91201ea3eafae693e05ff604177d16 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 21:11:58 +0530
-Subject: [PATCH 12/27] NVIDIA: SAUCE: dmaengine: tegra: Use struct for
+Subject: [PATCH 12/26] NVIDIA: SAUCE: dmaengine: tegra: Use struct for
  register offsets
 
 Move all DMA channel registers to a struct and update all register reads
@@ -3832,10 +3832,10 @@ index b63dd0322050..9b5bca55b9dc 100644
 2.52.0
 
 
-From 3ad81438c953ab4bae59343d4987282ce38f6611 Mon Sep 17 00:00:00 2001
+From 35458a8fcaf7f992aa48d36cf66e1453b6acf0ba Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 21:59:37 +0530
-Subject: [PATCH 13/27] NVIDIA: SAUCE: dmaengine: tegra: Support more than 40
+Subject: [PATCH 13/26] NVIDIA: SAUCE: dmaengine: tegra: Support more than 40
  bits address width
 
 Add support for address width of more than 40 bits. Till Tegra234 in
@@ -4089,10 +4089,10 @@ index 9b5bca55b9dc..e4634966a633 100644
 2.52.0
 
 
-From a64ba8d915301ad6fac678169b811c8982a5355a Mon Sep 17 00:00:00 2001
+From d61639e36d9ad6e879da7d757314d65c24d3ebf8 Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Fri, 28 Jul 2023 22:18:39 +0530
-Subject: [PATCH 14/27] NVIDIA: SAUCE: dmaengine: tegra: Add Tegra264 support
+Subject: [PATCH 14/26] NVIDIA: SAUCE: dmaengine: tegra: Add Tegra264 support
 
 Update compatible and chip data to support GPCDMA in Tegra264.
 
@@ -4167,10 +4167,10 @@ index e4634966a633..2edce19f8e59 100644
 2.52.0
 
 
-From bed4204275ee8708fc50b6dd562600a4948d6e07 Mon Sep 17 00:00:00 2001
+From 3153b97bfd932e4be379ec2657cba53f6519b76e Mon Sep 17 00:00:00 2001
 From: Akhil R <akhilrajeev@nvidia.com>
 Date: Wed, 16 Aug 2023 09:44:52 +0530
-Subject: [PATCH 15/27] NVIDIA: SAUCE: dmaengine: tegra: Remove reset control
+Subject: [PATCH 15/26] NVIDIA: SAUCE: dmaengine: tegra: Remove reset control
 
 The reset is expected to be controlled from the bootloader and should
 be done by the time it reaches kernel. Therefore a reset in the
@@ -4245,10 +4245,10 @@ index 2edce19f8e59..f98e19b3fe36 100644
 2.52.0
 
 
-From be874320395434f6ff2999c33df2323a67a838dd Mon Sep 17 00:00:00 2001
+From 362698f75ac5956dd4506eced1c658600585f999 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Tue, 4 Apr 2023 12:04:31 +0000
-Subject: [PATCH 16/27] NVIDIA: SAUCE: spi: add "tegra-spidev" compatible
+Subject: [PATCH 16/26] NVIDIA: SAUCE: spi: add "tegra-spidev" compatible
  string.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
@@ -4286,10 +4286,10 @@ index 5300c942a2a4..8fef8c6ffeff 100644
 2.52.0
 
 
-From 69dd1636c9c83411d319905b91e01ed3693265cd Mon Sep 17 00:00:00 2001
+From 995bb6db135e98c3e32010efb6d540574f3e346a Mon Sep 17 00:00:00 2001
 From: Gautham Srinivasan <gauthams@nvidia.com>
 Date: Wed, 24 May 2023 17:22:20 +0000
-Subject: [PATCH 17/27] NVIDIA: SAUCE: spi: add "tegra-spidev" name string.
+Subject: [PATCH 17/26] NVIDIA: SAUCE: spi: add "tegra-spidev" name string.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
 
@@ -4326,10 +4326,10 @@ index 8fef8c6ffeff..fe5033c24a68 100644
 2.52.0
 
 
-From f593ceda477cca2aa144d77d7926fbc43e201c6a Mon Sep 17 00:00:00 2001
+From 88bc55d80159c7559a29c81d3214eeb371d1a2c6 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Tue, 12 Dec 2023 11:00:52 +0000
-Subject: [PATCH 18/27] NVIDIA: SAUCE: drivers: spi: fix warnings in spi
+Subject: [PATCH 18/26] NVIDIA: SAUCE: drivers: spi: fix warnings in spi
  controller.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
@@ -4371,10 +4371,10 @@ index 795a8482c2c7..3ac19d4bb216 100644
 2.52.0
 
 
-From f0728f34d80818c3643ffe4544fc021646fdb09f Mon Sep 17 00:00:00 2001
+From 99247710b59667b1a0b08c700d94289ca8ccf838 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Wed, 13 Dec 2023 09:13:37 +0000
-Subject: [PATCH 19/27] NVIDIA: SAUCE: drivers: spi: fix warnings in spi core.
+Subject: [PATCH 19/26] NVIDIA: SAUCE: drivers: spi: fix warnings in spi core.
 
 BugLink: https://bugs.launchpad.net/bugs/2072591
 
@@ -4414,10 +4414,10 @@ index eb4076c0d040..c8ff9f5f9f41 100644
 2.52.0
 
 
-From 3f61433da1fdf7b2f0623f4cf196b8a0a978a9c9 Mon Sep 17 00:00:00 2001
+From d1a5dd8f2892d1b5a2ea011aa6a3a4a2a0dacdc3 Mon Sep 17 00:00:00 2001
 From: Vishwaroop A <va@nvidia.com>
 Date: Mon, 14 Aug 2023 20:33:31 +0000
-Subject: [PATCH 20/27] NVIDIA: SAUCE: spi: spi-tegra114: retain the spi mode
+Subject: [PATCH 20/26] NVIDIA: SAUCE: spi: spi-tegra114: retain the spi mode
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
 
@@ -4497,57 +4497,10 @@ index 3ac19d4bb216..5c4f2e832023 100644
 2.52.0
 
 
-From 56493d85058cac429c2d3279edb14d5ce1dacf1a Mon Sep 17 00:00:00 2001
-From: Prathamesh Shete <pshete@nvidia.com>
-Date: Fri, 14 Nov 2025 16:17:11 +0000
-Subject: [PATCH 21/27] soc/tegra: pmc: Don't fail if "aotag" is not present
-
-The "aotog" is an optional aperture, so if that aperture is not defined
-for a given device, then initialise the 'aotag' pointer to NULL instead
-of returning an error. Note that the PMC driver will not use 'aotag'
-pointer if initialised to NULL.
-
-Co-developed-by: Shardar Mohammed <smohammed@nvidia.com>
-Signed-off-by: Shardar Mohammed <smohammed@nvidia.com>
-Signed-off-by: Prathamesh Shete <pshete@nvidia.com>
-Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
-Signed-off-by: Thierry Reding <treding@nvidia.com>
----
- drivers/soc/tegra/pmc.c | 13 ++++++++++---
- 1 file changed, 10 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-index da7309c1acfa..7fb94a31a0b6 100644
---- a/drivers/soc/tegra/pmc.c
-+++ b/drivers/soc/tegra/pmc.c
-@@ -2892,9 +2892,16 @@ static int tegra_pmc_probe(struct platform_device *pdev)
- 		if (IS_ERR(pmc->wake))
- 			return PTR_ERR(pmc->wake);
- 
--		pmc->aotag = devm_platform_ioremap_resource_byname(pdev, "aotag");
--		if (IS_ERR(pmc->aotag))
--			return PTR_ERR(pmc->aotag);
-+		/* "aotag" is an optional aperture */
-+		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
-+						   "aotag");
-+		if (res) {
-+			pmc->aotag = devm_ioremap_resource(&pdev->dev, res);
-+			if (IS_ERR(pmc->aotag))
-+				return PTR_ERR(pmc->aotag);
-+		} else {
-+			pmc->aotag = NULL;
-+		}
- 
- 		/* "scratch" is an optional aperture */
- 		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
--- 
-2.52.0
-
-
-From c00c1b42bc4fb7d5f8ae21f625e77bd75336dbc4 Mon Sep 17 00:00:00 2001
+From c3beb6dd9526e0289ed9bd8a4f63a75555596d6e Mon Sep 17 00:00:00 2001
 From: Martin Radev <mradev@nvidia.com>
 Date: Sun, 28 Jul 2024 13:19:36 +0300
-Subject: [PATCH 22/27] NVIDIA: SAUCE: PCI: Disable HDA enablement on Tegra
+Subject: [PATCH 21/26] NVIDIA: SAUCE: PCI: Disable HDA enablement on Tegra
  iGPU
 
 This patch disables HDA enablement for Tegra iGPUs
@@ -4602,10 +4555,10 @@ index 3be85e28b81f..67503ba66093 100644
 2.52.0
 
 
-From 93de86bf6f51d3809590ab803d85bc16cf31f9cd Mon Sep 17 00:00:00 2001
+From 7f4fef500746daaf87e1124df08f242f104fc067 Mon Sep 17 00:00:00 2001
 From: Xingang Wang <wangxingang5@huawei.com>
 Date: Thu, 7 Nov 2024 13:29:15 +0530
-Subject: [PATCH 23/27] iommu/of: Fix pci_request_acs() before enumerating PCI
+Subject: [PATCH 22/26] iommu/of: Fix pci_request_acs() before enumerating PCI
  devices
 
 When booting with devicetree, the pci_request_acs() is called after the
@@ -4665,10 +4618,10 @@ index 3579265f1198..0a6a35936387 100644
 2.52.0
 
 
-From 617a57f7192d5a0aaeeebcb2e75a619a28d27364 Mon Sep 17 00:00:00 2001
+From ac99ae543074532e1df3d5f09b1aab23ed6ea4c8 Mon Sep 17 00:00:00 2001
 From: Jeffy Chen <jeffy.chen@rock-chips.com>
 Date: Wed, 8 Feb 2023 16:46:42 +0530
-Subject: [PATCH 24/27] NVIDIA: SAUCE: of/irq: Adjust of_pci_irq parsing for
+Subject: [PATCH 23/26] NVIDIA: SAUCE: of/irq: Adjust of_pci_irq parsing for
  multiple interrupts
 
 BugLink: https://bugs.launchpad.net/bugs/2080908
@@ -4723,10 +4676,10 @@ index 0a6a35936387..8ecd72fa318c 100644
 2.52.0
 
 
-From 1196c895ca775a30a5a39cdb578247aa8d7347bf Mon Sep 17 00:00:00 2001
+From 83f661b6d8550c522e40979ad7b2b5a2b7041281 Mon Sep 17 00:00:00 2001
 From: Sheetal <sheetal@nvidia.com>
 Date: Fri, 31 Oct 2025 11:38:24 +0000
-Subject: [PATCH 25/27] dmaengine: tegra-adma: Fix use-after-free
+Subject: [PATCH 24/26] dmaengine: tegra-adma: Fix use-after-free
 
 A use-after-free bug exists in the Tegra ADMA driver when audio streams
 are terminated, particularly during XRUN conditions. The issue occurs
@@ -4836,10 +4789,10 @@ index 864a8c55f33b..c82b38f6659f 100644
 2.52.0
 
 
-From 86fc4215429807019831600a3b1825db60817239 Mon Sep 17 00:00:00 2001
+From 3cd245d00e6bdcf1f1401d4dc8e111a092d257c7 Mon Sep 17 00:00:00 2001
 From: Pritesh Raithatha <praithatha@nvidia.com>
 Date: Thu, 17 Apr 2025 03:04:36 -0700
-Subject: [PATCH 26/27] iommu/arm-smmu-v3: use reserved memory for allocations
+Subject: [PATCH 25/26] iommu/arm-smmu-v3: use reserved memory for allocations
 
 CMA allocations are reusable. When not allocated, it can be used
 for temporary allocations. When there is allocation request,
@@ -4901,10 +4854,10 @@ index c9776cf74717..57d2aa677051 100644
 2.52.0
 
 
-From 06b873a8903607fa21056415f70bd6238742a369 Mon Sep 17 00:00:00 2001
+From 2c7863395ff356d90925f94bf41e37da9e2a997d Mon Sep 17 00:00:00 2001
 From: Ashish Mhetre <amhetre@nvidia.com>
 Date: Tue, 12 Aug 2025 06:32:27 +0000
-Subject: [PATCH 27/27] iommu/arm-smmu-v3: Implement WAR for Tegra264 Errata
+Subject: [PATCH 26/26] iommu/arm-smmu-v3: Implement WAR for Tegra264 Errata
  T264-SMMU-3
 
 If there is active traffic on a page while it is being invalidated, it
