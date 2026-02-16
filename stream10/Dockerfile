@@ -3,8 +3,8 @@ ARG KVER=6.12.0-204.el10
 
 FROM ${BASE} AS build
 ARG KVER
-RUN curl https://gitlab.com/redhat/centos-stream/containers/bootc/-/raw/c10s/cs.repo -o /etc/yum.repos.d/centos.repo
-RUN curl https://gitlab.com/redhat/centos-stream/containers/bootc/-/raw/c10s/cs-source.repo -o /etc/yum.repos.d/centos-addons.repo
+ADD cs.repo        /etc/yum.repos.d/centos.repo
+RUN cs-source.repo /etc/yum.repos.d/centos-addons.repo
 RUN dnf config-manager --set-enabled crb
 RUN dnf install -y rpmdevtools createrepo_c
 RUN dnf download --source kernel-${KVER}
@@ -21,8 +21,8 @@ RUN createrepo /root/rpmbuild/RPMS
 
 FROM ${BASE} AS base
 ARG KVER
-RUN curl https://gitlab.com/redhat/centos-stream/containers/bootc/-/raw/c10s/cs.repo -o /etc/yum.repos.d/centos.repo
-RUN curl https://gitlab.com/redhat/centos-stream/containers/bootc/-/raw/c10s/cs-source.repo -o /etc/yum.repos.d/centos-addons.repo
+ADD cs.repo        /etc/yum.repos.d/centos.repo
+RUN cs-source.repo /etc/yum.repos.d/centos-addons.repo
 RUN --mount=from=build,source=/root/rpmbuild/RPMS,target=/kernel \
   dnf reinstall -y \
   /kernel/aarch64/kernel-${KVER}.aarch64.rpm \

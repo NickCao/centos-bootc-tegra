@@ -1,0 +1,23 @@
+[baseos]
+name=CentOS Stream - BaseOS
+baseurl=https://composes.stream.centos.org/stream-10/production/CentOS-Stream-10-20260213.0/compose/BaseOS/$basearch/os
+gpgcheck=1
+repo_gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial-SHA256
+
+[appstream]
+name=CentOS Stream - AppStream
+baseurl=https://composes.stream.centos.org/stream-10/production/CentOS-Stream-10-20260213.0/compose/AppStream/$basearch/os
+gpgcheck=1
+repo_gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial-SHA256
+
+[crb]
+name=CentOS Stream - CRB
+baseurl=https://composes.stream.centos.org/stream-10/production/CentOS-Stream-10-20260213.0/compose/CRB/$basearch/os
+gpgcheck=1
+repo_gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial-SHA256
