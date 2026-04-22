@@ -1,5 +1,5 @@
 ARG BASE=quay.io/centos-bootc/centos-bootc:stream10
-ARG KVER=6.12.0-219.el10
+ARG KVER=6.12.0-223.el10
 
 FROM ${BASE} AS build
 ARG KVER
@@ -24,7 +24,7 @@ ARG KVER
 ADD cs.repo        /etc/yum.repos.d/centos.repo
 ADD cs-source.repo /etc/yum.repos.d/centos-addons.repo
 RUN --mount=from=build,source=/root/rpmbuild/RPMS,target=/kernel \
-  dnf reinstall -y \
+  dnf install -y \
   /kernel/aarch64/kernel-${KVER}.aarch64.rpm \
   /kernel/aarch64/kernel-core-${KVER}.aarch64.rpm \
   /kernel/aarch64/kernel-modules-${KVER}.aarch64.rpm \
