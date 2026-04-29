@@ -11,6 +11,11 @@ RUN dnf download --source kernel-${KVER}
 RUN rpm --install       ./kernel-${KVER}.src.rpm
 RUN dnf builddep -y     ./kernel-${KVER}.src.rpm --nobest
 
+RUN cat <<EOF >> /root/rpmbuild/SOURCES/kernel-local
+CONFIG_PCIE_TEGRA264=y
+CONFIG_PINCTRL_TEGRA238=y
+CONFIG_PINCTRL_TEGRA264=y
+EOF
 COPY kernel.patch /root/rpmbuild/SOURCES/patch-6.12-redhat.patch
 
 RUN rpmbuild --without automotive --without realtime --without debug \
