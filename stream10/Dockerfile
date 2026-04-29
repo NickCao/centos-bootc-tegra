@@ -1,5 +1,5 @@
 ARG BASE=quay.io/centos-bootc/centos-bootc:stream10
-ARG KVER=6.12.0-223.el10
+ARG KVER=6.12.0-224.el10
 
 FROM ${BASE} AS build
 ARG KVER
